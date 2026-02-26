@@ -2,7 +2,7 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 http.createServer((req, res) => {
   // Map URL to file
@@ -22,6 +22,6 @@ http.createServer((req, res) => {
     res.writeHead(404);
     res.end('Not Found');
   }
-}).listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+}).listen(port, '0.0.0.0', () => {
+  console.log(`Server running on port ${port}`);
 });
