@@ -7,7 +7,7 @@ const port = process.env.PORT || 3000;
 http.createServer((req, res) => {
   // Map URL to file
   if (req.url === '/myfile') {
-    const filePath = path.join(__dirname, 'file.txt');
+    const filePath = path.join(__dirname, 'file.php');
     
 
     fs.readFile(filePath, (err, data) => {
